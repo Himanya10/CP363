@@ -1,0 +1,6 @@
+SELECT b.broadDesc
+FROM broad b
+WHERE NOT EXISTS (
+    SELECT 1 FROM narrow n WHERE n.narrowBroadId = b.broadID
+)
+ORDER BY b.broadDesc

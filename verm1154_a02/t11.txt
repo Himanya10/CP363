@@ -1,0 +1,5 @@
+SELECT n.narrowDesc, count(mn.memberNarrowNarrowId) as narrowExpertiseCount
+FROM narrow n 
+JOIN memberNarrow mn ON mn.memberNarrowNarrowId = n.narrowID
+GROUP BY n.narrowDesc
+ORDER BY n.narrowDesc

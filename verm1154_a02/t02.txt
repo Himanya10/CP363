@@ -1,0 +1,6 @@
+SELECT m.memberForename, m.memberSurname, pt.pubTypeDesc, p.pubTitle
+FROM member m
+JOIN pub p ON p.pubMemberId = m.memberId 
+JOIN pubType pt ON p.pubPubType = pt.pubType
+WHERE m.memberInstitution LIKE '%Laurier%'
+ORDER BY m.memberSurname, m.memberForename, pt.pubTypeDesc, p.pubTitle

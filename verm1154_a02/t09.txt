@@ -1,0 +1,5 @@
+SELECT b.broadDesc, count(mb.memberBroadBroadId) as expertiseCount
+FROM broad b
+LEFT JOIN memberBroad mb ON mb.memberBroadBroadId = b.broadID
+GROUP BY b.broadDesc
+ORDER BY b.broadDesc

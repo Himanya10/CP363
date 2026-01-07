@@ -1,0 +1,7 @@
+SELECT m.memberForename, m.memberSurname, p.pubTitle
+FROM member m
+JOIN pub p ON p.pubMemberID = m.memberID
+JOIN pubType pt ON p.pubPubType = pt.pubType
+WHERE pt.PubTypeDesc = 'Conference Paper'
+AND p.pubTitle LIKE '%Nuclear%'
+ORDER BY p.pubTitle;

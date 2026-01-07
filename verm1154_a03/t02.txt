@@ -1,0 +1,5 @@
+SELECT m.memberSurname, m.memberForename,
+    (SELECT COUNT(*) FROM memberBroad mb WHERE mb.memberBroadMemberID = m.memberID) AS broadCount,
+    (SELECT COUNT(*) FROM memberNarrow mn WHERE mn.memberNarrowMemberID = m.memberID) AS narrowCount
+FROM member m
+ORDER BY m.memberSurname, m.memberForename
